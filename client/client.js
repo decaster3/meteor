@@ -1,6 +1,11 @@
 import React from 'react'
 import { render } from 'react-dom'
 import App from '../src/main/App'
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+import todoApp from './reducers'
+
+let store = createStore(todoApp)
 
 var config = {
   apiKey: "AIzaSyBMMIBgH5d_kJd5f2y9FgyJDWTsqbNOmAk",
@@ -13,6 +18,8 @@ var config = {
 firebase.initializeApp(config);
 
 render(
-  <App/>,
+  <Provider store={store}>
+  <App/>
+  <Provider>,
   document.getElementById('app')
 )
