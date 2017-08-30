@@ -3,7 +3,7 @@ var users = require('express').Router();
 var orders = require('./orders');
 var profile = require('./profile');
 
-user.use(function(req, res, next){
+users.use(function(req, res, next){
 	if (req.auth) {
 		next();
 	} else {
@@ -36,3 +36,6 @@ users.post('/:userId/newReferral', function(req, res, next){
 users.use('/:userId/profile', profile);
 
 users.use('/:userId/info', orders);
+
+
+module.exports = users;

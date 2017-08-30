@@ -1,18 +1,24 @@
-import React from 'react'
-import { render } from 'react-dom'
-import App from '../src/main/App'
+import { Switch, Route, render, HashRouter as Router} from 'react-router-dom';
 
-var config = {
-  apiKey: "AIzaSyBMMIBgH5d_kJd5f2y9FgyJDWTsqbNOmAk",
-  authDomain: "meteor-764bf.firebaseapp.com",
-  databaseURL: "https://meteor-764bf.firebaseio.com",
-  projectId: "meteor-764bf",
-  storageBucket: "meteor-764bf.appspot.com",
-  messagingSenderId: "560068246876"
-};
-firebase.initializeApp(config);
+//import { withRouter } from 'react-router-dom';
+
+import { Provider } from 'react-redux';
+import { Body, Footer, Header, Layout } from "../src/app";
+import { Profile } from '../src/profile';
+import { Menu } from '../src/menu';
+import store from '../src/store';
+
+const app = document.getElementById('app');
 
 render(
-  <App/>,
-  document.getElementById('app')
-)
+  (<Provider store={ store }>
+    <Router history={ history }>
+      <Layout>
+        <Switch>
+          <Route exact path="/" component={ Menu }/>
+          <Route path="/profile/:profile" name="archives" component={ Profile }/>
+        </Switch>
+      </Layout>
+    </Router>
+  </Provider>)
+    , app);

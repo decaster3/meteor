@@ -1,10 +1,10 @@
-var router = require('express').Router({mergeParams: true});
+var products = require('express').Router({mergeParams: true});
 
-router.get('/', function(req, res) {
+products.get('/', function(req, res) {
 	
 });
 
-router.param('productId', function(req, res, next, productId) {
+products.param('productId', function(req, res, next, productId) {
 	
 	console.log('validation on productId: ' + productId);
 	req.productId = productId;
@@ -12,11 +12,12 @@ router.param('productId', function(req, res, next, productId) {
 });
 
 
-router.get('/:productId', function(req, res, next) {
+products.get('/:productId', function(req, res, next) {
 	res.send({product: productId});
 });
 
-router.get('/:productId', function(req, res, next) {
+products.get('/:productId', function(req, res, next) {
 	res.send({product: productId});
 });
 
+module.exports = products;

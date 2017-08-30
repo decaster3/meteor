@@ -1,4 +1,4 @@
-var profile = require('express');
+var profile = require('express').Router();
 
 
 profile.get('/profile', function(req, res, next) {
