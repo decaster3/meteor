@@ -1,10 +1,22 @@
 import React, { Component } from 'react'
 import Body from '../app/components/Body'
+import {init as firebaseInit} from '../assets/js/firebase'
+import {Provider} from 'react-redux'
+import configureStore from './configureStore'
+
+
 class App extends Component{
+  constructor(props) {
+    super(props)
+    firebaseInit()
+    this.store = configureStore()
+  }
 
   render(){
       return (
-        <Body/>
+        <Provider store={this.store}>
+        <Routes history={browserHistory}/>
+        </Provider>
       );
   }
 }
