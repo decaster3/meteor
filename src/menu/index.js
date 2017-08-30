@@ -1,5 +1,6 @@
-import Menu from './components'
+import { Menu, MenuCategory } from './components'
 
 export default {
-	Menu
+	Menu,
+	MenuCategory
 }

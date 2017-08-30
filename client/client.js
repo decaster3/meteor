@@ -16,9 +16,11 @@ render(
       <Layout>
         <Switch>
           <Route exact path="/" component={ Menu }/>
-          <Route path="/profile/:profile" name="archives" component={ Profile }/>
-        </Switch>
+          </Switch>
       </Layout>
     </Router>
   </Provider>)
     , app);
+
+//<Route path="/profile/:profile" name="archives" component={ Profile }/>
+        
