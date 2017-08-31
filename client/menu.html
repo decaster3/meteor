@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
-  <link rel="stylesheet" href="navbar.css">
+  <link rel="stylesheet" href="bundle.css">
   <!-- <link rel="stylesheet" href="masthead.css"> -->
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css">
@@ -41,11 +41,14 @@
     <header class="masthead" style="background-image: url('../image/header.png')">
       <div class="container">
         <div class="row">
-          <div class="col-lg-8 col-md-10 mx-auto">
-            <div class="site-heading">
+          <div class="col-md-10 row-wraper">
+            <div class="site-heading col-md-7">
               <h1>Метеор пицца</h1>
-              <span class="subheading">Доставка пиццы</span>
+              <button class="btn btn-danger subheading">Начать</button>
             </div>
+            <span class="heading-logo col-md-3">
+              <img class src="../image/pizza-sm.png" class="img-responsive img-heading">
+            </span>
           </div>
         </div>
       </div>
