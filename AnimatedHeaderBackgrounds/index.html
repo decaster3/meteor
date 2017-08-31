@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<script src="https://code.jquery.com/jquery-latest.js"></script>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Animated Background Headers | Demo 1</title>
+		<meta name="description" content="Examples for creative website header animations using Canvas and JavaScript" />
+		<meta name="keywords" content="header, canvas, animated, creative, inspiration, javascript" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<link href='http://fonts.googleapis.com/css?family=Raleway:200,400,800' rel='stylesheet' type='text/css'>
+		<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<script type="text/javascript">
+(function($) {
+		$(document).ready(function(){
+				$(window).scroll(function(){
+						if ($(this).scrollTop() > 350) {
+								$('.menu').fadeIn(100);
+						} else {
+								$('.menu').fadeOut(100);
+						}
+				});
+		});
+})(jQuery);
+</script>
+		<div class = "menu">
+		<ul>
+		  <li><a class="active" href="#home">Home</a></li>
+		  <li><a href="#news">News</a></li>
+		  <li><a href="#contact">Contact</a></li>
+		  <li><a href="#about">About</a></li>
+	 </ul>
+ </div>
+
+		<div class="container demo-1">
+			<div class="content">
+				<div id="large-header" class="large-header">
+					<canvas id="demo-canvas"></canvas>
+					<h2 class="logo">Лого</h2>
+					<h2 class="person">Личный кабинет</h2>
+					<h2 class="cart">Корзина</h2>
+					<h1 class="main-title">600 <span class="thin">метеоров</span></h1>
+				</div>
+			</div>
+		</div><!-- /container -->
+		<section class="related">
+				<p>If you enjoyed this demo you might also like:</p>
+				<a href="http://tympanus.net/Development/HeaderEffects/">
+						<img src="http://codropspz.tympanus.netdna-cdn.com/codrops/wp-content/uploads/2013/07/HeaderEffects-300x162.jpg" />
+						<h3>On Scroll Header Effects</h3>
+				</a>
+				<a href="http://tympanus.net/Development/ArticleIntroEffects/">
+						<img src="http://codropspz.tympanus.netdna-cdn.com/codrops/wp-content/uploads/2014/05/ArticleIntroEffects-300x162.png" />
+						<h3>Inspiration for Article Intro Effects</h3>
+				</a>
+		</section>
+		<script src="js/TweenLite.min.js"></script>
+		<script src="js/EasePack.min.js"></script>
+		<script src="js/rAF.js"></script>
+		<script src="js/demo-1.js"></script>
+	</body>
+</html>
