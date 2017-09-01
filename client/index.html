@@ -1,48 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
-  <meta charset="UTF-8">
   <title>Meteor</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Examples for creative website header animations using Canvas and JavaScript" />
+	<meta name="keywords" content="header, canvas, animated, creative, inspiration, javascript" />
+	<meta name="author" content="Codrops" />
+	<link rel="shortcut icon" href="../favicon.ico">
+
+	<link href='http://fonts.googleapis.com/css?family=Raleway:200,400,800' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+	<!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+  <script src="https://code.jquery.com/jquery-latest.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="margin-bottom: 50px;">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+  <div class = "menu">
+			<ul>
+			  <li><a class="active" href="#home">Home</a></li>
+			  <li><a href="#news">News</a></li>
+			  <li><a href="#contact">Contact</a></li>
+			  <li><a href="#about">About</a></li>
+		 </ul>
+		</div>
 
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-      <ul class="navbar-nav" style="width: 100% !important;">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-md-4">
+		<div class="demo-1" style="margin-bottom: 50px;">
+ 			<div class="content">
+				<div id="large-header" class="large-header">
+					<canvas id="demo-canvas"></canvas>
+					<h2 class="logo">Лого</h2>
+					<h2 class="person">Личный кабинет</h2>
+					<h2 class="cart">Корзина</h2>
+					<h1 class="main-title">600 <span class="thin">метеоров</span></h1>
+				</div>
+			</div>
+		</div>
 
-              <li class="nav-item " >
-                <a class="nav-link text-md-center" href="#">Logo</a>
-              </li>
-            </div>
-            <div class="col-md-4" >
-
-              <li class="nav-item" >
-                <a class="nav-link text-md-center" href="#">Личный кабинет</a>
-              </li>
-            </div>
-            <div class="col-md-4">
-
-              <li class="nav-item">
-                <a class="nav-link text-md-center" href="#">Disabled</a>
-              </li>
-            </div>
-          </div>
-        </div>
-      </ul>
-
-    </div>
-  </nav>
+  <script type="text/javascript">
+    (function(jQuery) {
+    		jQuery(document).ready(function(){
+    				jQuery(window).scroll(function(){
+    						if (jQuery(this).scrollTop() > jQuery( window ).height() * 0.2) {
+    								jQuery('.menu').fadeIn(100);
+    						} else {
+    								jQuery('.menu').fadeOut(100);
+    						}
+    				});
+    		});
+  })(jQuery);
+  </script>
   <div id="app"></div>
 
   <script src="bundle.js"></script>

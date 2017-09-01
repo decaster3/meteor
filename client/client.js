@@ -1,6 +1,13 @@
 import React from 'react'
 import { render } from 'react-dom'
 import App from '../src/main/App'
+import '../assets/js/TweenLite.min.js'
+import '../assets/js/EasePack.min.js'
+import '../assets/js/rAF.js'
+import '../assets/js/demo1.js'
+import '../assets/css/normalize.css'
+import '../assets/css/demo.css'
+import '../assets/css/component.css'
 
 var config = {
   apiKey: "AIzaSyBMMIBgH5d_kJd5f2y9FgyJDWTsqbNOmAk",
