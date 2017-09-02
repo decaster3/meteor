@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import Body from '../app/components/Body'
+import MainFirstPage from '../app/components/MainFirstPage'
 class App extends Component{
 
   render(){
       return (
-        <Body/>
+        <MainFirstPage/>
       );
   }
 }
