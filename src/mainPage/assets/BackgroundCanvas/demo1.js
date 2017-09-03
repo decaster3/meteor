@@ -8,7 +8,7 @@ export const foo = (a) => {
 
     function initHeader() {
         width = window.innerWidth;
-        height = 350;
+        height = window.innerHeight * 0.4;
         target = {x: width/2, y: height/2};
 
         largeHeader = document.getElementById('large-header');
@@ -98,7 +98,7 @@ export const foo = (a) => {
 
     function resize() {
         width = window.innerWidth;
-        height = window.innerHeight;
+        height = window.innerHeight*0.4;
         largeHeader.style.height = height+'px';
         canvas.width = width;
         canvas.height = height;
