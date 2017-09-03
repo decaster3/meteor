@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<script src="https://code.jquery.com/jquery-latest.js"></script>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Animated Background Headers | Demo 1</title>
+		<meta name="description" content="Examples for creative website header animations using Canvas and JavaScript" />
+		<meta name="keywords" content="header, canvas, animated, creative, inspiration, javascript" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<link rel="stylesheet" type="text/css" href="css/navbar.css" />
+		<link rel="stylesheet" type="text/css" href="css/header.css" />
+		<link rel="stylesheet" type="text/css" href="css/override_bootstrap.css" />
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css">
+  		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<link href='http://fonts.googleapis.com/css?family=Raleway:200,400,800' rel='stylesheet' type='text/css'>
+		<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<script type="text/javascript">
+			(function($) {
+				$(document).ready(function(){
+					$(window).scroll(function(){
+							if ($(this).scrollTop() > 350) {
+									$('.menu').fadeIn(100);
+							} else {
+									$('.menu').fadeOut(100);
+							}
+					});
+				});
+			})(jQuery);
+		</script>
+		<!-- Navigation -->
+	  <nav class="navbar navbar-expand-lg navbar-light fixed-top menu" id="mainNav">
+	    <div class="container">
+	      <a class="navbar-brand" href="#">Meteor</a>
+	      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+	        Menu
+	        <i class="fa fa-bars"></i>
+	      </button>
+	      <div class="collapse navbar-collapse" id="navbarResponsive">
+	        <ul class="navbar-nav ml-auto">
+	          <li class="nav-item">
+	            <a class="nav-link" href="#">Home</a>
+	          </li>
+	          <li class="nav-item">
+	            <a class="nav-link" href="#">Зарегистрироваться</a>
+	          </li>
+	          |
+	          <li class="nav-item">
+	            <a class="nav-link" href="#">Войти</a>
+	          </li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+
+	  <!-- Page Header -->
+	    <header class="masthead">
+	      <div class="container demo-1">
+	        <div class="row content">
+		        <div id="large-header" class="large-header">
+	        	  <canvas id="demo-canvas"></canvas>
+		          <div id="large-header" class="col-md-10 row-wraper">
+		            <div class="site-heading col-md-7">
+		              <h1>Метеор пицца</h1>
+		              <button class="btn btn-danger subheading">Начать</button>
+		            </div>
+		            <span class="heading-logo col-md-3">
+		              <img class src="img/pizza-sm.png" class="img-responsive img-heading">
+		            </span>
+		          </div>
+		        </div>
+	        </div>
+	      </div>
+	    </header>
+
+
+		<!-- /container -->
+		<section class="related">
+			<p>If you enjoyed this demo you might also like:</p>
+			<a href="http://tympanus.net/Development/HeaderEffects/">
+				<img src="http://codropspz.tympanus.netdna-cdn.com/codrops/wp-content/uploads/2013/07/HeaderEffects-300x162.jpg" />
+				<h3>On Scroll Header Effects</h3>
+			</a>
+			<a href="http://tympanus.net/Development/ArticleIntroEffects/">
+				<img src="http://codropspz.tympanus.netdna-cdn.com/codrops/wp-content/uploads/2014/05/ArticleIntroEffects-300x162.png" />
+				<h3>Inspiration for Article Intro Effects</h3>
+			</a>
+		</section>
+		<script src="js/TweenLite.min.js"></script>
+		<script src="js/EasePack.min.js"></script>
+		<script src="js/rAF.js"></script>
+		<script src="js/demo-1.js"></script>
+	</body>
+</html>
