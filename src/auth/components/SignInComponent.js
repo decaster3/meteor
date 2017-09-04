@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import * as firebase from 'firebase';
+
 import { Route, Redirect, browserHistory, Link} from 'react-router';
 
 class SignInComponent extends Component {
@@ -12,8 +13,7 @@ class SignInComponent extends Component {
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    // this.checkUserAuth = this.checkUserAuth.bind(this);
-    this.signOut = this.signOut.bind(this);
+    this.signOut = this.signOut.bind(this)
   }
 
   handleSubmit(event){
@@ -28,15 +28,15 @@ class SignInComponent extends Component {
       }
     });
   }
-
   signOut(){
     firebase.auth().signOut().then(function() {
-
-
+      console.log("Loged Out saccesfully");
     }).catch(function(error) {
       console.log(error);
     });
   }
+
+
 
   handleChange(event){
     const target = event.target;
@@ -51,6 +51,7 @@ class SignInComponent extends Component {
       return (
         <div>
           <form onSubmit = {this.handleSubmit}>
+
             <label>
               Email:
                <input name="email" type = "text" value = {this.state.email} onChange = {this.handleChange}/>
@@ -65,9 +66,13 @@ class SignInComponent extends Component {
               Passwprd repeat:
                <input name = "passRepeat" type = "password" value = {this.state.passRepeat} onChange = {this.handleChange}/>
             </label>
+
             <input type = "Submit" value = "Submit"/>
+
           </form>
+
           <Link to = 'sign_up'>Регистрация</Link>
+
           <button onClick = {this.signOut}>Выйти</button>
         </div>
       );

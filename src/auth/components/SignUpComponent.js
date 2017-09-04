@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router';
 import * as firebase from 'firebase';
+import { signOut } from './authMethods.js'
 import { Route, Redirect, browserHistory} from 'react-router';
 
 class SignUpComponent extends Component {
@@ -24,16 +25,21 @@ class SignUpComponent extends Component {
       var errorMessage = error.message;
       console.log(errorMessage);
     });
+    //email verification
+    var user = firebase.auth().currentUser;
+    firebase.auth().onAuthStateChanged(function(user) {
+        user.sendEmailVerification();
+    });
+
+    //redirect to menu
     firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
           browserHistory.push('/menu');
       }
     });
-  }
-
-  loggedIn(){
 
   }
+
 
   handleChange(event){
     const target = event.target;
