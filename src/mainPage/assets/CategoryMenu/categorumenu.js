@@ -1,5 +1,4 @@
 export const initCategoryFunction = (self2) => {
-
   $("img").click(function() {
       var img = $(this);
       var id = img.attr('id');
