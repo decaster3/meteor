@@ -20,21 +20,19 @@ class SignUpComponent extends Component {
     event.preventDefault();
     firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.pass).catch(function(error) {
       var errorCode = error.code;
+      console.log(errorCode);
       var errorMessage = error.message;
+      console.log(errorMessage);
     });
-    if (this.loggedIn){
-      browserHistory.push('/menu');
-    }
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+          browserHistory.push('/menu');
+      }
+    });
   }
 
   loggedIn(){
-    firebase.auth().onAuthStateChanged(function(user) {
-      if (user) {
-          return true;
-      } else {
-          return false;
-      }
-    });
+
   }
 
   handleChange(event){
