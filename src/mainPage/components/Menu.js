@@ -1,26 +1,34 @@
 import React, { Component } from 'react'
 import * as firebase from 'firebase';
+import Cards from './Cards/Cards'
 
 class Menu extends Component {
   constructor(){
     super();
     this.state = {
-      pizza: 'chertovka'
+      cards: []
     }
   }
   componentDidMount(){
-    const rootRef = firebase.database().ref().child('pizzas');
-    const namePizzaRef = rootRef.on('value', snap => {
+    const rootRef = firebase.database().ref().child('products');
+    const namePizzaRef = rootRef.on('value', snapshot => {
+      var products = [];
+      snapshot.forEach(function(childSnapshot) {
+          products.push(childSnapshot.val());
+      });
+
       this.setState({
-        pizza: snap.val().name
+        cards: products
       });
     });
+
   }
 
   render () {
+
       return (
         <div>
-              <h1>Heu {this.state.pizza}</h1>
+              <Cards cards = {this.state.cards} currentCategory={this.props.currentCategory}/>
         </div>
       );
 
