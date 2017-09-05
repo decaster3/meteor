@@ -15,27 +15,36 @@
 
   //primary navigation slide-in effect
   if ($(window).width() > MQL) {
-    var headerHeight = $('#mainNav').height();
-    $(window).on('scroll', {
-        previousTop: 0
-      },
-      function() {
-        var currentTop = $(window).scrollTop();
-        //check if user is scrolling up
-        if (currentTop < this.previousTop) {
-          //if scrolling up...
-          if (currentTop > 0 && $('#mainNav').hasClass('is-fixed')) {
-            $('#mainNav').addClass('is-visible');
-          } else {
-            $('#mainNav').removeClass('is-visible is-fixed');
-          }
-        } else if (currentTop > this.previousTop) {
-          //if scrolling down...
-          $('#mainNav').removeClass('is-visible');
-          if (currentTop > headerHeight && !$('#mainNav').hasClass('is-fixed')) $('#mainNav').addClass('is-fixed');
-        }
-        this.previousTop = currentTop;
-      });
+    $(window).on('scroll', 
+        function() {
+            $(document).ready(function(){
+                $(window).scroll(function(){
+                    if ($(this).scrollTop() > $( window ).height() * 0.5) {
+                        $('#mainNav').addClass('is-visible is-fixed');
+                    } else {
+                        $('#mainNav').removeClass('is-visible is-fixed');
+                    }
+                });
+            });
+        })
   }
 
-})(jQuery); // End of use strict
+})(jQuery);
+      // function() {
+      //   var currentTop = $(window).scrollTop();
+      //   //check if user is scrolling up
+      //   if (currentTop < this.previousTop) {
+      //     //if scrolling up...
+      //     if (currentTop > 0 && $('#mainNav').hasClass('is-fixed')) {
+      //       $('#mainNav').addClass('is-visible');
+      //     } else {
+      //       $('#mainNav').removeClass('is-visible is-fixed');
+      //     }
+      //   } else if (currentTop > this.previousTop) {
+      //     //if scrolling down...
+      //     $('#mainNav').removeClass('is-visible');
+      //     if (currentTop > headerHeight && !$('#mainNav').hasClass('is-fixed')) $('#mainNav').addClass('is-fixed');
+      //   }
+      //   this.previousTop = currentTop;
+      // });
+ // End of use strict
