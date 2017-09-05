@@ -19,7 +19,7 @@
         function() {
             $(document).ready(function(){
                 $(window).scroll(function(){
-                    if ($(this).scrollTop() > $( window ).height() * 0.5) {
+                    if ($(this).scrollTop() > $( window ).height() * 0.2) {
                         $('#mainNav').addClass('is-visible is-fixed');
                     } else {
                         $('#mainNav').removeClass('is-visible is-fixed');

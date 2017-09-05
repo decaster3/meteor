@@ -3,7 +3,7 @@ import { render } from 'react-dom'
 import App from '../src/main/App'
 import * as firebase from 'firebase'
 
-var config = {
+const config = {
   apiKey: "AIzaSyBMMIBgH5d_kJd5f2y9FgyJDWTsqbNOmAk",
   authDomain: "meteor-764bf.firebaseapp.com",
   databaseURL: "https://meteor-764bf.firebaseio.com",
