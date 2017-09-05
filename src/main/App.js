@@ -6,13 +6,17 @@ import SignInComponent from '../auth/components/SignInComponent'
 import { Router, Route, browserHistory } from 'react-router'
 class App extends Component{
 
+  constructor(props){
+    super(props);
+  }
+
   render(){
       return (
         <Router history={browserHistory}>
           <Route path='/' component={MainComponent} />
           <Route path='/menu' component={MainFirstPage} />
-          <Route path='/sign_up' component={SignUpComponent} />
-          <Route path='/sign_in' component={SignInComponent} />
+          <Route path='/sign_in' component={SignInComponent} firebase={this.props.fiirebase} />
+          <Route path='/sign_up' component={SignUpComponent} firebase={this.props.firebase} />
         </Router>
       );
   }

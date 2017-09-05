@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router';
-import * as firebase from 'firebase';
 import { Route, Redirect, browserHistory} from 'react-router';
 
 class SignUpComponent extends Component {
@@ -18,20 +17,20 @@ class SignUpComponent extends Component {
 
   handleSubmit(event){
     event.preventDefault();
-    firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.pass).catch(function(error) {
+    this.props.route.firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.pass).catch(function(error) {
       var errorCode = error.code;
       console.log(errorCode);
       var errorMessage = error.message;
       console.log(errorMessage);
     });
     //email verification
-    var user = firebase.auth().currentUser;
-    firebase.auth().onAuthStateChanged(function(user) {
+    var user = this.props.route.firebase.auth().currentUser;
+    this.props.route.firebase.auth().onAuthStateChanged(function(user) {
         user.sendEmailVerification();
     });
 
     //redirect to menu
-    firebase.auth().onAuthStateChanged(function(user) {
+    this.props.route.firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
           browserHistory.push('/menu');
       }
@@ -55,19 +54,19 @@ class SignUpComponent extends Component {
           <form onSubmit = {this.handleSubmit}>
             <label>
               Email:
-               <input name="email" type = "text" value = {this.state.email} onChange = {this.handleChange}/>
+               <input name="email" type = "text" defaultValue = {this.state.email} onChange = {this.handleChange}/>
             </label>
 
             <label>
               Passwprd:
-               <input name= "pass" type = "password" value = {this.state.pass} onChange = {this.handleChange}/>
+               <input name= "pass" type = "password" defaultValue = {this.state.pass} onChange = {this.handleChange}/>
             </label>
 
             <label>
               Passwprd repeat:
-               <input name = "passRepeat" type = "password" value = {this.state.passRepeat} onChange = {this.handleChange}/>
+               <input name = "passRepeat" type = "password" defaultValue = {this.state.passRepeat} onChange = {this.handleChange}/>
             </label>
-            <input type = "Submit" value = "Submit"/>
+            <input type = "Submit" defaultValue = "Submit"/>
           </form>
           <Link to = "/sign_in">Войти</Link>
         </div>
