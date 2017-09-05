@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import * as firebase from 'firebase';
 import Cookies from 'universal-cookie';
 
 import { Route, Redirect, browserHistory, Link} from 'react-router';
@@ -28,11 +27,11 @@ class SignInComponent extends Component {
 
   handleSubmit(event){
     event.preventDefault();
-    firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.pass).catch(function(error) {
+    this.props.route.firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.pass).catch(function(error) {
       var errorCode = error.code;
       var errorMessage = error.message;
     });
-    firebase.auth().onAuthStateChanged(function(user) {
+    this.props.route.firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
           browserHistory.push('/menu')
       }
@@ -48,7 +47,7 @@ class SignInComponent extends Component {
     cookiess.set('cart', contt, {path: '/'});
   }
   signOut(){
-    firebase.auth().signOut().then(function() {
+    this.props.route.firebase.auth().signOut().then(function() {
       console.log("Loged Out saccesfully");
     }).catch(function(error) {
       console.log(error);

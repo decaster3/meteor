@@ -15,6 +15,6 @@ const config = {
 firebase.initializeApp(config);
 
 render(
-  <App/>,
+  <App firebase = {firebase} />,
   document.getElementById('app')
 )
