@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router';
+import { Link } from 'react-router'
+import mainStyle from '../assets/main.css'
+import NavBar from './NavBar'
+import Header from './Header'
 
 class MainComponent extends Component {
   render () {
       return (
         <div>
-             <Link to='/menu'>Меню</Link>
-             <Link to='/sign_up'>Аутентификация</Link>
+             <NavBar/>
+             <Header/>
         </div>
       );
 
