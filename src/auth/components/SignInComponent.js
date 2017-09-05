@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import * as firebase from 'firebase';
+import Cookies from 'universal-cookie';
+
 import { Route, Redirect, browserHistory, Link} from 'react-router';
 
 class SignInComponent extends Component {
@@ -12,8 +14,16 @@ class SignInComponent extends Component {
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    // this.checkUserAuth = this.checkUserAuth.bind(this);
     this.signOut = this.signOut.bind(this);
+    this.getCoockies = this.getCoockies.bind(this);
+  }
+  componentDidMount(){
+    const cookies = new Cookies();
+    var start = {
+      quantity: 0,
+      name: ['']
+    };
+    cookies.set('cart', start, { path: '/' });
   }
 
   handleSubmit(event){
@@ -28,15 +38,24 @@ class SignInComponent extends Component {
       }
     });
   }
-
+  getCoockies(){
+    const cookiess = new Cookies();
+    var cont = cookiess.get('cart');
+    var contt = {
+      quantity: cont.quantity + 1,
+    };
+    console.log(contt);
+    cookiess.set('cart', contt, {path: '/'});
+  }
   signOut(){
     firebase.auth().signOut().then(function() {
-
-
+      console.log("Loged Out saccesfully");
     }).catch(function(error) {
       console.log(error);
     });
   }
+
+
 
   handleChange(event){
     const target = event.target;
@@ -51,6 +70,7 @@ class SignInComponent extends Component {
       return (
         <div>
           <form onSubmit = {this.handleSubmit}>
+
             <label>
               Email:
                <input name="email" type = "text" value = {this.state.email} onChange = {this.handleChange}/>
@@ -65,10 +85,15 @@ class SignInComponent extends Component {
               Passwprd repeat:
                <input name = "passRepeat" type = "password" value = {this.state.passRepeat} onChange = {this.handleChange}/>
             </label>
+
             <input type = "Submit" value = "Submit"/>
+
           </form>
+
           <Link to = 'sign_up'>Регистрация</Link>
+
           <button onClick = {this.signOut}>Выйти</button>
+          <button onClick = {this.getCoockies}>get coockies </button>
         </div>
       );
 

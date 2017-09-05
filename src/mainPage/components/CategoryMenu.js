@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
-import js1 from '../assets/BackgroundCanvas/demo.css'
-import js2 from '../assets/BackgroundCanvas/component.css'
+import '../assets/BackgroundCanvas/demo.css'
+import '../assets/BackgroundCanvas/component.css'
 import {initCategoryFunction} from '../assets/CategoryMenu/categorumenu.js'
 import Menu from './Menu.js'
 import * as firebase from 'firebase';
+import '../assets/CategoryMenu/category.css'
 
 class CategoryMenu extends Component {
 
@@ -56,7 +57,7 @@ class CategoryMenu extends Component {
           return <img className="img-circle" id={key} key={index} src="http://2.bp.blogspot.com/-C6KY8tsc8Fw/T-SVFnncxjI/AAAAAAAAANw/FMiNzA8Zecw/s640/mr.bean.jpg" width="100" height="100" />
         });
         return <div>
-          <div className="categories d-flex justify-content-center">
+          <div className="categories d-flex justify-content-center vertical-center">
             {categories}
           </div>
           <Menu currentCategory={this.state.currentCategory}/>

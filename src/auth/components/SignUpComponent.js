@@ -24,16 +24,21 @@ class SignUpComponent extends Component {
       var errorMessage = error.message;
       console.log(errorMessage);
     });
+    //email verification
+    var user = firebase.auth().currentUser;
+    firebase.auth().onAuthStateChanged(function(user) {
+        user.sendEmailVerification();
+    });
+
+    //redirect to menu
     firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
           browserHistory.push('/menu');
       }
     });
-  }
-
-  loggedIn(){
 
   }
+
 
   handleChange(event){
     const target = event.target;
