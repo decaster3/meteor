@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React, { Component, Image } from 'react'
 import headerStyle from '../assets/header.css'
 import overrideBootstrap from '../assets/override_bootstrap.css'
-import pizza from '../assets/pizza-sm.png'
+import pizza from '../assets/pizza-sm.png' 
 
 export default class Header extends Component {
   render () {

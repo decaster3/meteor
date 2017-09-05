@@ -2,7 +2,7 @@
 header.masthead {
   margin-bottom: 50px;
   background: no-repeat center center;
-  background-image: url("https://raw.githubusercontent.com/decaster3/meteor/merging/src/mainPage/assets/BackgroundCanvas/demo-1-bg.jpg");
+  background-image: url("../../mainPage/assets/BackgroundCanvas/demo-1-bg.jpg");
   background-attachment: scroll;
   -webkit-background-size: cover;
   -moz-background-size: cover;

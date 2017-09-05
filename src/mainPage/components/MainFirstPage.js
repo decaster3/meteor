@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import NavBar from './NavBar.js'
+import NavBar from '../../shared/components/NavBar'
 import BackgroundCanvas from './BackgroundCanvas.js'
 import CategoryMenu from './CategoryMenu.js'
 

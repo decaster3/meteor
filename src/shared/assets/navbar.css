@@ -1,5 +1,6 @@
 #mainNav {
   position: absolute;
+  z-index:9999;
   border-bottom: 1px solid #eeeeee;
   background-color: white;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; 
@@ -8,6 +9,15 @@
   font-weight: 800;
   color: #777777; 
 }
+
+#mainNav ul.navbar-nav {
+  background:  none;
+}
+
+#mainNav ul.navbar-nav:hover {
+  background:  none;
+}
+
 #mainNav .navbar-toggler {
   font-size: 12px;
   font-weight: 800;
@@ -37,7 +47,8 @@
     color: white; 
   }
   #mainNav .navbar-nav > li.nav-item > a:focus, #mainNav .navbar-nav > li.nav-item > a:hover {
-    color: rgba(255, 255, 255, 0.8); 
+    color: rgba(255, 255, 255, 0.8);
+    background:  none;
   }
 }
 @media only screen and (min-width: 1170px) {
