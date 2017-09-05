@@ -8,9 +8,13 @@ import '../assets/BackgroundCanvas/TweenLite.min.js'
 import '../assets/BackgroundCanvas/rAF.js'
 
 class BackgroundCanvas extends Component {
+  constructor(props){
+    super(props);
+  }
   componentDidMount(){
     foo(1);
   }
+
   render () {
       return (
         <div className="demo-1">
@@ -27,6 +31,7 @@ class BackgroundCanvas extends Component {
               <button type="button" className="btn btn-circle btn-outline-light btn-xl canvas-button">
                   <span className="glyphicon glyphicon-plus"></span>
               </button>
+
             </div>
     			</div>
 
