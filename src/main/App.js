@@ -15,7 +15,7 @@ class App extends Component{
         <Router history={browserHistory}>
           <Route path='/' component={MainComponent} />
           <Route path='/menu' component={MainFirstPage} />
-          <Route path='/sign_in' component={SignInComponent} firebase={this.props.fiirebase} />
+          <Route path='/sign_in' component={SignInComponent} firebase={this.props.firebase} />
           <Route path='/sign_up' component={SignUpComponent} firebase={this.props.firebase} />
         </Router>
       );

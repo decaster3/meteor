@@ -9,12 +9,11 @@ class SignInComponent extends Component {
     this.state = {
       email: '',
       pass: '',
-      passRepeat: ''
+      passRepeat: '',
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.signOut = this.signOut.bind(this);
-    this.getCoockies = this.getCoockies.bind(this);
   }
   componentDidMount(){
     const cookies = new Cookies();
@@ -36,15 +35,6 @@ class SignInComponent extends Component {
           browserHistory.push('/menu')
       }
     });
-  }
-  getCoockies(){
-    const cookiess = new Cookies();
-    var cont = cookiess.get('cart');
-    var contt = {
-      quantity: cont.quantity + 1,
-    };
-    console.log(contt);
-    cookiess.set('cart', contt, {path: '/'});
   }
   signOut(){
     this.props.route.firebase.auth().signOut().then(function() {
@@ -92,7 +82,6 @@ class SignInComponent extends Component {
           <Link to = 'sign_up'>Регистрация</Link>
 
           <button onClick = {this.signOut}>Выйти</button>
-          <button onClick = {this.getCoockies}>get coockies </button>
         </div>
       );
 
