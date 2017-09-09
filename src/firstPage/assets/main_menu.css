@@ -1,0 +1,59 @@
+.centered-text {
+	text-align: center;
+	display: block;
+	padding: 20px;
+	font-size: 3rem;
+	font-weight: 600;
+}
+
+hr.divider {
+  text-align: center;
+  width: 50%;
+  left: 25%;
+  position: relative;
+  margin: 20px;
+}
+
+
+.card-deck {
+	margin-bottom: 50px;
+}
+
+
+.carousel {
+	background-color:  white;
+}
+
+.slider.animated {
+	background-color:  white;
+}
+
+button.control-arrow {
+	width: 20px;
+	height:  30px;
+	color: white;
+	background-color: rgba(128, 128, 128, 0.3);
+}
+.control-next {
+	
+}
+
+.control-prev {
+
+}
+
+/* .divider {
+	display: block;
+	padding: 20px;
+  	display:  block;
+}
+
+.divider:before{
+	position: fixed;
+	top: 0;
+	left: 0;
+  color: gray;
+  line-height: 1px;
+  height: 1px;
+  width:  50%;
+} */

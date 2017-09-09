@@ -8,7 +8,7 @@ export const foo = (a) => {
 
     function initHeader() {
         width = window.innerWidth;
-        height = window.innerHeight * 0.5;
+        height = window.innerHeight * 0.7;
         target = {x: width/2, y: height/2};
 
         largeHeader = document.getElementById('large-header');

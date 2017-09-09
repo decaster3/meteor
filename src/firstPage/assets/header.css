@@ -1,8 +1,30 @@
 
+
+header.masthead .logo-heading {
+  display: flex;
+}
+
+
+header.masthead .logo-heading  img{
+  border-radius: 50%;
+}
+
+@media only screen and (max-width: 765px) {
+  header.masthead .row-wraper {
+    flex-flow: column nowrap;
+    align-items: center;
+  }
+}
+
+header.masthead .logo-heading img {
+  max-width:  100%;
+  height: 200px;
+  align-self: center;
+}
+
 header.masthead {
-  margin-bottom: 50px;
   background: no-repeat center center;
-  background-image: url("../../mainPage/assets/BackgroundCanvas/demo-1-bg.jpg");
+  background-image: url("./BackgroundCanvas/demo-1-bg.jpg");
   background-attachment: scroll;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -33,20 +55,26 @@ header.masthead .site-heading button {
 header.masthead .row-wraper {
   display: flex;
   flex-flow: row nowrap;
-  align-items: center;
+  justify-content: center;
 }
 
 header.masthead .page-heading,
-header.masthead .site-heading {
+header.masthead .site-heading{
   text-align: center;
   display: flex;
   flex-flow: column nowrap;
-  align-items: flex-end;
-  padding-right: 0.5em;
+  padding-right: 0.7em;
 }
+header.masthead .page-heading,
+header.masthead .site-heading,
+header.masthead .site-heading button {
+    align-self: flex-end;
+}
+
+
 header.masthead .page-heading h1,
 header.masthead .site-heading h1 {
-  font-size: 0.7rem;
+  font-size: 50px;
   margin-top: 0;
 }
 header.masthead .page-heading .subheading,
@@ -63,12 +91,12 @@ header.masthead .logo-header {
   display: flex;
 }
 
-@media only screen and (min-width: 768px) {
+/* @media only screen and (min-width: 768px) {
   header.masthead .page-heading h1,
   header.masthead .site-heading h1 {
-    font-size: 3rem; 
+    font-size: 5rem; 
   } 
-}
+} */
 header.masthead .post-heading h1 {
   font-size: 2.4rem; 
 }
@@ -92,7 +120,7 @@ header.masthead .post-heading .meta {
 header.masthead .post-heading .meta a {
   color: white; 
 }
-@media only screen and (min-width: 768px) {
+/* @media only screen and (min-width: 768px) {
   header.masthead .post-heading h1 {
     font-size: 55px; 
   }
@@ -104,4 +132,4 @@ header.masthead .post-heading .meta a {
   header.masthead .post-heading .subheading {
     font-size: 30px; 
   } 
-}
+} */

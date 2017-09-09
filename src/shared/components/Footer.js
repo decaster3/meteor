@@ -6,7 +6,7 @@ import footerStyle from '../assets/footer.css'
 export default class Footer extends Component {
   render () {
       return (
-	      	<footer className="footer-bs">
+	      <footer className="footer-bs">
 	        <div className="row">
 	        	<div className="col-md-3 footer-brand animated fadeInLeft">
 	            	<h2>Logo</h2>
@@ -45,14 +45,15 @@ export default class Footer extends Component {
 	        	<div className="col-md-3 footer-ns animated fadeInRight">
 	            	<h4>Newsletter</h4>
 	                <p>A rover wearing a fuzzy suit doesn’t alarm the real penguins</p>
-	                <p>
-	                    <div className="input-group">
-	                      <input type="text" class="form-control" placeholder="Search for..."/>
-	                      <span className="input-group-btn">
-	                        <button className="btn btn-default" type="button"><span class="glyphicon glyphicon-envelope"></span></button>
-	                      </span>
-	                    </div>
-	                 </p>
+	                <p></p>
+                    <div className="input-group">
+                      <input type="text" className="form-control" placeholder="Search for..."/>
+                      <span className="input-group-btn">
+                        <button className="btn btn-default" type="button">
+                        	<span className="glyphicon glyphicon-envelope"></span>
+                        </button>
+                      </span>
+                    </div>
 	            </div>
 	        </div>
 	    </footer>
