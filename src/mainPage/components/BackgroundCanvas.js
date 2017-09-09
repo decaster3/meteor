@@ -11,21 +11,29 @@ import MeteorPlusButton from './MeteorPlusButton';
 
 class BackgroundCanvas extends Component {
   constructor(props){
+<<<<<<< HEAD
     super(props)
 
 
     this.drop.bind(this);
   }
 
+=======
+    super(props);
+  }
+>>>>>>> 3b5946d814b4b3525623251440e42062e1682169
   componentDidMount(){
     foo(1);
   }
 
+<<<<<<< HEAD
   drop(){
       console.log(  $('.dropdown-menu'));
       $('.dropdown-menu').dropdown()
   }
 
+=======
+>>>>>>> 3b5946d814b4b3525623251440e42062e1682169
   render () {
       return (
         <div className="canvas-header">
@@ -52,7 +60,14 @@ class BackgroundCanvas extends Component {
                 <span className="meteor-count">600</span>
                 метеоров
               </h1>
+<<<<<<< HEAD
               <MeteorPlusButton/>
+=======
+              <button type="button" className="btn btn-circle btn-outline-light btn-xl canvas-button">
+                  <span className="glyphicon glyphicon-plus"></span>
+              </button>
+
+>>>>>>> 3b5946d814b4b3525623251440e42062e1682169
             </div>
 
     			</div>

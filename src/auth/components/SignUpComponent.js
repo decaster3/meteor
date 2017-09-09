@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router';
 import * as firebase from 'firebase';
+<<<<<<< HEAD
 import { signOut } from './SignInComponent.js'
+=======
+>>>>>>> 3b5946d814b4b3525623251440e42062e1682169
 import { Route, Redirect, browserHistory} from 'react-router';
 
 class SignUpComponent extends Component {
