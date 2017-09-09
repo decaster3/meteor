@@ -4,6 +4,7 @@ import * as firebase from 'firebase';
 import { Route, Redirect, browserHistory, Link} from 'react-router';
 
 class SignInComponent extends Component {
+
   constructor(props){
     super(props)
     this.state = {
