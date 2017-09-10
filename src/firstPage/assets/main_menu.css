@@ -21,25 +21,26 @@ hr.divider {
 
 
 .carousel {
-	background-color:  white;
+	display:  flex;
+	flex-flow:  row nowrap;
 }
 
-.slider.animated {
-	background-color:  white;
+.row.carousel-wraper {
+	display:  flex;
+	justify-content: space-around;
+	margin-bottom: 50px;
 }
 
-button.control-arrow {
-	width: 20px;
-	height:  30px;
-	color: white;
-	background-color: rgba(128, 128, 128, 0.3);
-}
-.control-next {
-	
+
+
+a.left.carousel-control{
+	background-image: none;
+	left: -20px;
 }
 
-.control-prev {
-
+a.right.carousel-control{
+	background-image: none;
+	right: -20px;
 }
 
 /* .divider {
