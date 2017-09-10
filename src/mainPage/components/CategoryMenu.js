@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import '../assets/BackgroundCanvas/demo.css'
-import '../assets/BackgroundCanvas/component.css'
 import {initCategoryFunction} from '../assets/CategoryMenu/categorumenu.js'
 import Menu from './Menu.js'
 import * as firebase from 'firebase';
@@ -54,7 +52,7 @@ class CategoryMenu extends Component {
       var categories;
       if (this.state.categories != null) {
         categories = Object.keys(this.state.categories).map(function(key, index) {
-          return <img className="img-circle" id={key} key={index} src="http://2.bp.blogspot.com/-C6KY8tsc8Fw/T-SVFnncxjI/AAAAAAAAANw/FMiNzA8Zecw/s640/mr.bean.jpg" width="100" height="100" />
+          return <img className="rounded-circle" id={key} key={index} src="http://2.bp.blogspot.com/-C6KY8tsc8Fw/T-SVFnncxjI/AAAAAAAAANw/FMiNzA8Zecw/s640/mr.bean.jpg" width="100" height="100" />
         });
         return <div>
           <div className="categories d-flex justify-content-center vertical-center">
