@@ -6,6 +6,7 @@ import {foo}  from '../assets/BackgroundCanvas/demo1.js';
 import '../assets/BackgroundCanvas/EasePack.min.js';
 import '../assets/BackgroundCanvas/TweenLite.min.js';
 import '../assets/BackgroundCanvas/rAF.js';
+import '../assets/Dropdown/dropdown.css';
 import MeteorPlusBody from './MeteorPlusBody';
 import MeteorPlusButton from './MeteorPlusButton';
 
@@ -37,16 +38,14 @@ class BackgroundCanvas extends Component {
 
 				      <h2 className="logo" >Лого</h2>
 
-              <img onClick={this.drop} data-toggle="dropdown" src="http://2.bp.blogspot.com/-C6KY8tsc8Fw/T-SVFnncxjI/AAAAAAAAANw/FMiNzA8Zecw/s640/mr.bean.jpg" className="person img-thumbnail rounded-circle"/>
-              <div className="dropdown-menu ">
-                <h6 className="dropdown-header">Mister Bin</h6>
-                <a className="dropdown-item" href="#">Профиль</a>
-                <a className="dropdown-item" href="#">Another action</a>
-                <a className="dropdown-item" href="#">Something else here</a>
-                <div className="dropdown-divider"></div>
-                <a className="dropdown-item" href="#">Separated link</a>
+              <div className="dropdown person">
+                <button className="dropbtn rounded-circle">Lc</button>
+                <div className="dropdown-content">
+                  <a href="#">Link 1</a>
+                  <a href="#">Link 2</a>
+                  <a href="#">Link 3</a>
+                </div>
               </div>
-
 
               <h2 className="cart">Корзина</h2>
 

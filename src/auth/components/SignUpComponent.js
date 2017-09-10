@@ -18,6 +18,15 @@ class SignUpComponent extends Component {
     // this.checkUserAuth = this.checkUserAuth.bind(this);
   }
   //+79520335877
+
+  // <div className="dropdown">
+  //   <img data-toggle="dropdown" src="http://2.bp.blogspot.com/-C6KY8tsc8Fw/T-SVFnncxjI/AAAAAAAAANw/FMiNzA8Zecw/s640/mr.bean.jpg" className="dropbtn"/>
+  //   <div className="dropdown-content">
+  //     <a href="#">Link 1</a>
+  //     <a href="#">Link 2</a>
+  //     <a href="#">Link 3</a>
+  //   </div>
+  // </div>
   componentDidMount(){
     window.recaptchaVerifier = new this.props.route.firebase.auth.RecaptchaVerifier('submitForm', {
   'size': 'invisible',
