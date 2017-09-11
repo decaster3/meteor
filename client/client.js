@@ -2,6 +2,14 @@ import React from 'react'
 import { render } from 'react-dom'
 import App from '../src/main/App'
 import * as firebase from 'firebase'
+import WebFont from 'webfontloader';
+import './assets/Harabara_Bold/font.css'
+
+WebFont.load({
+  google: {
+    families: ['Titillium Web:300,400,700', 'sans-serif']
+  }
+});
 
 var config = {
   apiKey: "AIzaSyBMMIBgH5d_kJd5f2y9FgyJDWTsqbNOmAk",

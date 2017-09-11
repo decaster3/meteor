@@ -13,6 +13,9 @@
 .clearfix:before, .clearfix:after { content: ''; display: table; }
 .clearfix:after { clear: both; }
 
+.cosmo-menu{
+	text-align: center;
+}
 .menu {
 	position:fixed;
 	top:0px;
@@ -49,7 +52,7 @@ li a:hover {
 
 
 body {
-	background: #fff;
+	background: #e3e4e5;
 	color: #383a3c;
 	font-weight: 400;
 	font-size: 1em;

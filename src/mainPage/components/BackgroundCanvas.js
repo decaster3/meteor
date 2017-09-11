@@ -51,7 +51,7 @@ class BackgroundCanvas extends Component {
 
     					<h1 className="main-title">
                 <span className="meteor-count">600</span>
-                метеоров
+                Метеоров
               </h1>
 
               <MeteorPlusButton/>
@@ -61,7 +61,7 @@ class BackgroundCanvas extends Component {
     			</div>
 
           <MeteorPlusBody/>
-
+          <h2 className="cosmo-menu">Космическое меню</h2>
         </div>
       );
 

@@ -98,7 +98,7 @@ export const foo = (a) => {
 
     function resize() {
         width = window.innerWidth;
-        height = window.innerHeight*0.4;
+        height = window.innerHeight*0.485;
         largeHeader.style.height = height+'px';
         canvas.width = width;
         canvas.height = height;
