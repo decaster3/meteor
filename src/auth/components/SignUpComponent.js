@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router';
-import { Route, Redirect, browserHistory} from 'react-router';
+import { Redirect, Link} from 'react-router-dom';
 
 class SignUpComponent extends Component {
   constructor(props){
@@ -44,8 +43,9 @@ class SignUpComponent extends Component {
     //redirect to menu
     this.props.route.firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
-          browserHistory.push('/menu');
+          <Redirect push to="/menu"/>;
       }
+
     });
 
   }

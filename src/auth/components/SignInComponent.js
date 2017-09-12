@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Cookies from 'universal-cookie';
 
-import { Route, Redirect, browserHistory, Link} from 'react-router';
+import {Link} from 'react-router-dom';
 
 class SignInComponent extends Component {
 

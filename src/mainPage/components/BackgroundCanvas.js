@@ -38,14 +38,7 @@ class BackgroundCanvas extends Component {
 				      <h2 className="logo" >Лого</h2>
 
               <img onClick={this.drop} data-toggle="dropdown" src="http://2.bp.blogspot.com/-C6KY8tsc8Fw/T-SVFnncxjI/AAAAAAAAANw/FMiNzA8Zecw/s640/mr.bean.jpg" className="person img-thumbnail rounded-circle"/>
-              <div className="dropdown-menu ">
-                <h6 className="dropdown-header">Mister Bin</h6>
-                <a className="dropdown-item" href="#">Профиль</a>
-                <a className="dropdown-item" href="#">Another action</a>
-                <a className="dropdown-item" href="#">Something else here</a>
-                <div className="dropdown-divider"></div>
-                <a className="dropdown-item" href="#">Separated link</a>
-              </div>
+              
 
 
               <h2 className="cart">Корзина</h2>
