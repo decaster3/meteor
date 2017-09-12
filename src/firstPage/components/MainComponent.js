@@ -7,7 +7,7 @@ class MainComponent extends Component {
         <div>
 
              <Link to='/menu'>Меню</Link>
-             <Link to='/protected'>Protected</Link>
+             <Link to='/profile'>Profile</Link>
              <Link to='/sign_up'>Аутентификация</Link>
         </div>
       );

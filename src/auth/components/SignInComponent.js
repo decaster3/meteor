@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import Cookies from 'universal-cookie';
+import {   Redirect } from 'react-router-dom'
+import {withRouter} from "react-router-dom";
 
 import {Link} from 'react-router-dom';
 
@@ -10,7 +12,7 @@ class SignInComponent extends Component {
     this.state = {
       email: '',
       pass: '',
-      passRepeat: '',
+      passRepeat: ''
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -26,6 +28,7 @@ class SignInComponent extends Component {
   }
 
   handleSubmit(event){
+    
     event.preventDefault();
     this.props.route.firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.pass).catch(function(error) {
       var errorCode = error.code;
@@ -33,7 +36,7 @@ class SignInComponent extends Component {
     });
     this.props.route.firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
-          browserHistory.push('/menu')
+          this.props.history.push(this.from);
       }
     });
   }
@@ -57,26 +60,29 @@ class SignInComponent extends Component {
   }
 
   render () {
+      const { from } = this.props.location.state || { from: { pathname: '/menu' } }
+      this.from = from
+
       return (
         <div>
           <form onSubmit = {this.handleSubmit}>
 
             <label>
               Email:
-               <input name="email" type = "text" value = {this.state.email} onChange = {this.handleChange}/>
+               <input name="email" type = "text" defaultValue = {this.state.email} onChange = {this.handleChange}/>
             </label>
 
             <label>
               Passwprd:
-               <input name= "pass" type = "password" value = {this.state.pass} onChange = {this.handleChange}/>
+               <input name= "pass" type = "password" defaultValue = {this.state.pass} onChange = {this.handleChange}/>
             </label>
 
             <label>
               Passwprd repeat:
-               <input name = "passRepeat" type = "password" value = {this.state.passRepeat} onChange = {this.handleChange}/>
+               <input name = "passRepeat" type = "password" defaultValue = {this.state.passRepeat} onChange = {this.handleChange}/>
             </label>
 
-            <input type = "Submit" value = "Submit"/>
+            <input type = "Submit" defaultValue = "Submit"/>
 
           </form>
 
@@ -88,4 +94,4 @@ class SignInComponent extends Component {
 
   }
 }
-export default SignInComponent
+export default withRouter (SignInComponent)

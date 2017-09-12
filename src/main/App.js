@@ -26,7 +26,10 @@ class App extends Component{
 
             <Route path="/profile" render={() => (
               loggedIn ? (
-                <Redirect to="/sign_in"/>
+                <Redirect to={{
+                    pathname: '/sign_in',
+                    state: { from: "/profile" }
+                  }}/>
               ) : (
                 <ProfileComponent/>
               )
