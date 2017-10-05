@@ -3,8 +3,8 @@ import * as firebase from 'firebase';
 import Cards from './Cards/Cards'
 
 class Menu extends Component {
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.state = {
       cards: []
     }

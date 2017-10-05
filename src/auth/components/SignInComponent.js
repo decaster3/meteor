@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import Cookies from 'universal-cookie';
-import {   Redirect } from 'react-router-dom'
+import {Redirect } from 'react-router-dom'
 import {withRouter} from "react-router-dom";
+import * as firebase from 'firebase';
 
 import {Link} from 'react-router-dom';
 
@@ -17,7 +18,10 @@ class SignInComponent extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.signOut = this.signOut.bind(this);
+    const { from } = this.props.location.state || { from: { pathname: '/menu' } }
+    this.from = from
   }
+
   componentDidMount(){
     const cookies = new Cookies();
     var start = {
@@ -28,20 +32,21 @@ class SignInComponent extends Component {
   }
 
   handleSubmit(event){
-    
     event.preventDefault();
-    this.props.route.firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.pass).catch(function(error) {
+    firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.pass).catch(function(error) {
       var errorCode = error.code;
       var errorMessage = error.message;
     });
-    this.props.route.firebase.auth().onAuthStateChanged(function(user) {
+    firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
           this.props.history.push(this.from);
       }
+      console.log("auth failed");
     });
   }
+
   signOut(){
-    this.props.route.firebase.auth().signOut().then(function() {
+    firebase.auth().signOut().then(function() {
       console.log("Loged Out saccesfully");
     }).catch(function(error) {
       console.log(error);
@@ -60,8 +65,6 @@ class SignInComponent extends Component {
   }
 
   render () {
-      const { from } = this.props.location.state || { from: { pathname: '/menu' } }
-      this.from = from
 
       return (
         <div>

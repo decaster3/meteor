@@ -6,10 +6,6 @@ class Card extends Component {
     super(props);
   }
 
-  componentDidMount(){
-    
-  }
-
   render () {
       return (
         <div className="card-deck col-md-3 my-card" key={this.props.key}>

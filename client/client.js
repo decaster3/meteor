@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from 'react-dom'
 import App from '../src/main/App'
-import * as firebase from 'firebase'
+import * as firebase from 'firebase';
 
 var config = {
   apiKey: "AIzaSyBMMIBgH5d_kJd5f2y9FgyJDWTsqbNOmAk",
@@ -13,10 +13,7 @@ var config = {
 };
 
 firebase.initializeApp(config);
-
-
-
 render(
-  <App firebase = {firebase} />,
+  <App />,
   document.getElementById('app')
 )

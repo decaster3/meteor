@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import {initCategoryFunction} from '../assets/CategoryMenu/categorumenu.js'
-import Menu from './Menu.js'
 import * as firebase from 'firebase';
+import Menu from './Menu.js'
+import {initCategoryFunction} from '../assets/CategoryMenu/categorumenu.js'
 import '../assets/CategoryMenu/category.css'
 
 class CategoryMenu extends Component {
@@ -13,11 +13,10 @@ class CategoryMenu extends Component {
       currentCategory: {}
     };
 
-    this.initCategories.bind(this);
   }
 
   componentDidMount(){
-    this.initCategories();
+    this.initCategories()
   }
 
   initCategories() {
@@ -49,8 +48,9 @@ class CategoryMenu extends Component {
   }
 
   render () {
+      initCategoryFunction(this);
       var categories;
-      if (this.state.categories != null) {
+      if (this.state.categories) {
         categories = Object.keys(this.state.categories).map(function(key, index) {
           return <img className="rounded-circle" id={key} key={index} src="http://2.bp.blogspot.com/-C6KY8tsc8Fw/T-SVFnncxjI/AAAAAAAAANw/FMiNzA8Zecw/s640/mr.bean.jpg" width="100" height="100" />
         });
